@@ -1,0 +1,15 @@
+actor: AcceptanceTester
+modules:
+     enabled:
+        - WebDriver:
+                url: 'http://mragazza.rf.gd/'
+                # port: 9515
+                browser: 'chrome'
+                # clear_cookies: 'true'
+                # restart: 'true'
+                capabilities:
+                        unexpectedAlertBehaviour: 'accept'
+
+
+
+       
