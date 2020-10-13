@@ -3,7 +3,7 @@ modules:
      enabled:
         - WebDriver:
                 url: 'http://mragazza.rf.gd/'
-                # port: 9515
+                port: 9515
                 browser: 'chrome'
                 # clear_cookies: 'true'
                 # restart: 'true'
