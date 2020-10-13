@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Agreement2Cest
 {
@@ -14,35 +14,28 @@ class Agreement2Cest
         $I->wait(3);
         $excOfPage = null;
 
-        while($excOfPage == null) 
-        {
+        while ($excOfPage == null) {
             $excOfVacation = null;
-            while($excOfVacation == null) 
-            {
-                try 
-                {
+            while ($excOfVacation == null) {
+                try {
                     $I->seeElement('.ajax-btn');
                     $I->click('.ajax-btn');
                     $I->wait(4);
                     $I->AcceptPopup();
                     $I->wait(2);
-                }
-                catch(Exception $e) {
+                } catch (Exception $e) {
                     $excOfVacation = $e;
                 }
             }
 
-            try 
-            {
+            try {
                 $I->see('»');
                 $I->click('»');
-            }
-            catch(Exception $e) 
-            {
+            } catch (Exception $e) {
                 $excOfPage = $e;
             }
             $I->wait(2);
         }
-        
+
     }
 }

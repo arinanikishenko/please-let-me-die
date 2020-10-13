@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class DeleteWeeklyHolidaysCest
 {
@@ -13,7 +13,7 @@ class DeleteWeeklyHolidaysCest
         $I->wait(3);
         $I->click('Будущие годы');
         $I->click('.ajax-btn', \Codeception\Util\Locator::elementAt('//table/tbody/tr', 4));
-        $I->wait(5); 
+        $I->wait(5);
         $I->AcceptPopup();
     }
 }

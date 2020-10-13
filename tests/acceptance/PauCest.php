@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class pauCest
 {
@@ -9,7 +9,7 @@ class pauCest
     public function tryToTest(AcceptanceTester $I)
     {
         \Page\LoginPage::open($I);
-        
+
         $I->wait(10);
 
         try {
@@ -24,9 +24,5 @@ class pauCest
         $I->wait(3);
 
 
-   
-
-    
-        
     }
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class HomeCest
 {
@@ -11,8 +11,8 @@ class HomeCest
     {
 
         $I->amOnPage('/schedule/index');
-        $I->fillField ('#loginform-username', 'manager');
-        $I->fillField ('#loginform-password', 'manager');
+        $I->fillField('#loginform-username', 'manager');
+        $I->fillField('#loginform-password', 'manager');
         $I->click('Войти');
         //sleep(3); // php остановка на 3с
         $I->wait(3); // ожидание 3с

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class EditVacationCest
 {
@@ -34,16 +34,16 @@ class EditVacationCest
         $date1 = $I->grabValueFrom('#schedule-date_start');
         $date2 = $I->grabValueFrom('#schedule-date_end');
 
-        $date_start = date('d-m-Y', strtotime($date1 .' + 1 month'));
-        $date_end = date('d-m-Y', strtotime($date2 .' + 1 month'));
+        $date_start = date('d-m-Y', strtotime($date1 . ' + 1 month'));
+        $date_end = date('d-m-Y', strtotime($date2 . ' + 1 month'));
 
-        $I->fillField ('#schedule-date_start', $date_start);
-        $I->fillField ('#schedule-date_end', $date_end);
+        $I->fillField('#schedule-date_start', $date_start);
+        $I->fillField('#schedule-date_end', $date_end);
         $I->wait(8);
         $I->click('Сохранить');
         $I->wait(3);
         $I->canSee('Данные успешно сохранены');
-        $I->wait(3); 
+        $I->wait(3);
     }
 }
 
