@@ -1,6 +1,8 @@
 <?php
 namespace Page;
 
+/*Класс для добавления отпуска*/
+
 class ClassLeaveAdd
 {
     protected $actor;
@@ -26,7 +28,10 @@ class ClassLeaveAdd
     public function enter($BeginDate, $EndDate)
     {
         $I = $this->actor;
-        $I->click(\Codeception\Util\Locator::contains('.modal-btn','Добавить отпуск')); 
+        //$I->wait(10);
+        //$I->click('Добавить отпуск');
+        //$I->click(\Codeception\Util\Locator::contains('.modal-btn','Добавить отпуск')); 
+        $I->click(\Codeception\Util\Locator::find('a', ['title'=>'Добавить отпуск']));
         $I->wait(10);
         $I->fillField ('#schedule-date_start', self::$BeginDate);
         $I->wait(3);

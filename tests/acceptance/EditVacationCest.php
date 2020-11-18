@@ -25,7 +25,12 @@ class EditVacationCest
 
         $I->wait(10);
         $I->reloadPage();
+        $I->wait(10);
+        //$I->scrollTo(['css' => '.navbar-header'], 0, -300); //
+
         \Page\ClassLeaveAdd::open($I);
+        $I->wait(10);
+        \Page\GoToLastPage::open($I);
 
         $I->click('.modal-btn', \Codeception\Util\Locator::elementAt('//table/tbody/tr', -1)); //кнопка редактирования в последней строке таблицы
         $I->wait(10);
