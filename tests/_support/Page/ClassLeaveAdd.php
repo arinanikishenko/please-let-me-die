@@ -1,7 +1,7 @@
 <?php
 namespace Page;
 
-/*Класс для добавления отпуска*/
+/*Класс для добавления недельного отпуска*/
 
 class ClassLeaveAdd
 {
@@ -31,6 +31,9 @@ class ClassLeaveAdd
         //$I->wait(10);
         //$I->click('Добавить отпуск');
         //$I->click(\Codeception\Util\Locator::contains('.modal-btn','Добавить отпуск')); 
+        
+//ПАДАЕТ ПАДЛА НА ДОБАВЛЕНИИ ОТПУСКА
+
         $I->click(\Codeception\Util\Locator::find('a', ['title'=>'Добавить отпуск']));
         $I->wait(10);
         $I->fillField ('#schedule-date_start', self::$BeginDate);

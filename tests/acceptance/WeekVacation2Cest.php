@@ -6,6 +6,8 @@ class WeekVacationCest
     {
     }
 
+    /* Добавление отпуска на неделю*/
+
     public function AddVacationWeek(AcceptanceTester $I)
     {
         $BeginDate = $this->getRandomDate(1200000);
@@ -25,7 +27,8 @@ class WeekVacationCest
         $I->canSee('Данные успешно сохранены');
         $I->wait(3);
     }
-
+    
+// не пойму, как использую это ↓
     private function getRandomDate($limitSeconds = 2592000)
     {
         $randomSeconds = mt_rand(0, $limitSeconds);

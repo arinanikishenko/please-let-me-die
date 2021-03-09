@@ -13,25 +13,27 @@ class EditVacationCest
     {
         \Page\LoginPage::open($I);
         $I->wait(5);
-        $I->click('Будущие годы');
-        $I->wait(10);
+        //$I->click('»');
+        //$I->click('Будущие годы');
 
-        try {
-            $I->click(\Codeception\Util\Locator::elementAt('ul.pagination li a', -2)); //переход на посленюю страницу (предпоследння кнопка)
-        } catch (\Codeception\Exception\ElementNotFound $e) {
-            var_dump($e->getMessage());
-            //die;
-        }
-
-        $I->wait(10);
-        $I->reloadPage();
-        $I->wait(10);
-        //$I->scrollTo(['css' => '.navbar-header'], 0, -300); //
-
-        \Page\ClassLeaveAdd::open($I);
-        $I->wait(10);
         \Page\GoToLastPage::open($I);
 
+        $I->reloadPage();
+        $I->wait(5);
+
+        \Page\ClassLeaveAdd::open($I);
+        $I->wait(5);
+
+        try {
+            //$I->see('»');
+            $I->click('»');
+        } catch (\Codeception\Exception\ElementNotFound $e) {
+            var_dump($e->getMessage());
+        }
+
+// ПАДАЕТ на добавлении отпуска (в классе)
+
+        $I->wait(2);
         $I->click('.modal-btn', \Codeception\Util\Locator::elementAt('//table/tbody/tr', -1)); //кнопка редактирования в последней строке таблицы
         $I->wait(10);
         $I->see('Обновить');

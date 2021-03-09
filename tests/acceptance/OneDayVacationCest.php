@@ -6,6 +6,16 @@ class OneDayVacationCest
     {
     }
 
+    /*Создание отпуска на 1 день
+    Падает и должен падать, вручную тоже нельзя 
+    создать отпуск на 1 день */
+
+    private function getRandomDate($limitSeconds = 60)
+    {
+        $randomSeconds = mt_rand(0, $limitSeconds);
+        return DateTimeImmutable::createFromFormat("U", time() + $randomSeconds);
+    }
+    
     public function AddVacation(AcceptanceTester $I)
     {
         $date = $this->getRandomDate(1200000);
@@ -24,9 +34,5 @@ class OneDayVacationCest
         $I->wait(3); // ожидание 3с
     }
 
-    private function getRandomDate($limitSeconds = 60)
-    {
-        $randomSeconds = mt_rand(0, $limitSeconds);
-        return DateTimeImmutable::createFromFormat("U", time() + $randomSeconds);
-    }
+
 }

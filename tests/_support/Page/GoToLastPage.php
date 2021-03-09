@@ -5,20 +5,6 @@ namespace Page;
 
 class GoToLastPage
 {
-    //protected $actor;
-
-
-   // public function __construct($I)
-   // {
-        //$this->actor = $I;
-    //}
-
-    //public function open($I)
-    //{
-       // $page = new static($I);
-
-   // }
-
     public function open($I)
     {
         //$I = $this->actor;
